@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>שליחת טיוטות ל-Outlook</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+</head>
+<body>
+  <div class="container">
+    <h1>📝 יצירת טיוטת מייל</h1>
+    <form id="mailForm">
+      
+      <label>נושא:</label>
+      <input type="text" name="subject" placeholder="הכנס את נושא המייל" required>
+
+      <label>נמענים:</label>
+      <div id="recipientsContainer">
+        <div class="recipientRow">
+          <input type="text" name="recipients[]" placeholder="כתובת מייל" required>
+          <button type="button" class="deleteRecipient"><i class="fas fa-trash"></i>X</button>
+        </div>
+      </div>
+      <button type="button" id="addRecipient"><i class="fas fa-plus"></i>+</button>
+
+      <label>גוף ההודעה:</label>
+      <textarea name="body" placeholder="כתוב כאן את גוף ההודעה" required></textarea>
+
+      <label>קובץ מצורף:</label>
+      <label class="custom-file-upload">
+        <input type="file" name="attachment" id="attachment" required>
+        בחר קובץ
+      </label>
+
+      <button type="submit" class="sendBtn">✉️ שלח</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

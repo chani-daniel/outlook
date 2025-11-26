@@ -1,0 +1,306 @@
+@font-face {
+    font-family: 'ploni-bold';
+    src: url('fonts/ploni-bold-aaa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ploni-black';
+    src: url('fonts/ploni-black-aaa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ploni-demibold';
+    src: url('fonts/ploni-demibold-aaa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ploni-light';
+    src: url('fonts/ploni-light-aaa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ploni-medium';
+    src: url('fonts/ploni-medium-aaa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ploni-regular';
+    src: url('fonts/ploni-regular-aaa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ploni-ultrabold';
+    src: url('fonts/ploni-ultrabold-aaa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ploni-ultralight';
+    src: url('fonts/ploni-ultralight-aaa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* כל גוף העמוד */
+body {
+    font-family: 'ploni-regular', sans-serif;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    direction: rtl;
+}
+
+/* מיכל הטופס */
+.container {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    text-align: center;
+    color: #ff6b6b;
+    margin-bottom: 25px;
+    animation: pop 0.5s ease-out;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    color: #555;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+}
+
+textarea {
+    min-height: 80px;
+}
+
+/* כפתורים כלליים */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff6b6b, #ffb347);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* שורת נמענים */
+.recipientRow {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    animation: fadeIn 0.3s;
+}
+
+.recipientRow input {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+.recipientRow input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+}
+
+/* כפתור מחיקה עגול */
+.deleteRecipient {
+    background: #ff4c4c;
+    border-radius: 50%;
+    padding: 8px 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    margin-top: inherit;
+}
+
+.deleteRecipient:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.deleteRecipient i {
+    color: white;
+    font-size: 14px;
+}
+
+/* כפתור הוספה עגול עם + */
+#addRecipient {
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+#addRecipient:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#addRecipient i {
+    color: white;
+    font-size: 20px;
+}
+
+/* כפתור העלאת קובץ */
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ff6b6b, #ffb347);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 5px;
+}
+
+.custom-file-upload:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* כפתור שליחה */
+.sendBtn {
+    width: 100%;
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+/* אנימציות */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.inputError {
+    border: 2px solid red;
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
